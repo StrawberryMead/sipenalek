@@ -16,6 +16,9 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.GroupLayout;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 /**
  *
@@ -27,6 +30,7 @@ public class MainMenu extends javax.swing.JFrame {
      * Creates new form MainMenu
      */
     public MainMenu() {
+    	getContentPane().setBackground(new Color(255, 255, 255));
         this.name = UserSession.emp_name;
         this.nik = UserSession.nik;
         this.role = UserSession.role;
@@ -59,7 +63,8 @@ public class MainMenu extends javax.swing.JFrame {
         rEmp = new javax.swing.JMenuItem();
         rUser = new javax.swing.JMenuItem();
         rAPrj = new javax.swing.JMenuItem();
-        rNPrj = new javax.swing.JMenuItem();
+        rN1Prj = new javax.swing.JMenuItem();
+        rN2Prj = new javax.swing.JMenuItem();
         options = new javax.swing.JMenu();
         logout = new javax.swing.JMenuItem();
 
@@ -165,14 +170,22 @@ public class MainMenu extends javax.swing.JFrame {
         });
         report.add(rAPrj);
 
-        rNPrj.setText("Project Berjalan");
-        rNPrj.addActionListener(new java.awt.event.ActionListener() {
+        rN1Prj.setText("Projek Approval Budget");
+        rN1Prj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rNPrjActionPerformed(evt);
+            	rN1PrjActionPerformed(evt);
             }
         });
-        report.add(rNPrj);
+        report.add(rN1Prj);
 
+        rN2Prj.setText("Projek Approval KaDiv");
+        rN2Prj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	rN2PrjActionPerformed(evt);
+            }
+        });
+        report.add(rN2Prj);
+        
         jMenuBar1.add(report);
 
         options.setText("Options");
@@ -196,27 +209,36 @@ public class MainMenu extends javax.swing.JFrame {
         JLabel lblUser = new JLabel("Halo "+name+", anda login sebagai "+role);
         lblUser.setHorizontalAlignment(SwingConstants.CENTER);
         lblUser.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        
+        background = new JLabel("");
+        background.setIcon(new ImageIcon("E:\\java\\SiPenalek\\SiPenalek\\src\\main\\resources\\bg.png"));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(layout.createSequentialGroup()
-        			.addGap(109)
-        			.addComponent(lblWelcome)
-        			.addContainerGap(132, Short.MAX_VALUE))
-        		.addGroup(layout.createSequentialGroup()
-        			.addGap(34)
-        			.addComponent(lblUser, GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
-        			.addGap(53))
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(196)
+        					.addComponent(lblWelcome, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(233)
+        					.addComponent(lblUser, GroupLayout.PREFERRED_SIZE, 212, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(97)
+        					.addComponent(background)))
+        			.addContainerGap(650, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap()
-        			.addComponent(lblWelcome)
+        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        			.addGap(20)
+        			.addComponent(lblWelcome, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(lblUser)
-        			.addContainerGap(232, Short.MAX_VALUE))
+        			.addComponent(lblUser, GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+        			.addGap(26)
+        			.addComponent(background)
+        			.addGap(183))
         );
         getContentPane().setLayout(layout);
 
@@ -338,12 +360,19 @@ public class MainMenu extends javax.swing.JFrame {
         report.setVisible(true); 
     }//GEN-LAST:event_rAPrjActionPerformed
 
-    private void rNPrjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rNPrjActionPerformed
+    private void rN1PrjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rN1PrjActionPerformed
         // TODO add your handling code here:
-        ReportProjectNonaktif report = new ReportProjectNonaktif();
+    	ReportProjectApprovalBudget report = new ReportProjectApprovalBudget();
         report.setLocationRelativeTo(null);
         report.setVisible(true); 
-    }//GEN-LAST:event_rNPrjActionPerformed
+    }//GEN-LAST:event_rN1PrjActionPerformed
+
+    private void rN2PrjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rN2PrjActionPerformed
+        // TODO add your handling code here:
+    	ReportProjectApprovalKadiv report = new ReportProjectApprovalKadiv();
+        report.setLocationRelativeTo(null);
+        report.setVisible(true); 
+    }//GEN-LAST:event_rN2PrjActionPerformed
 
     /**
      * @param args the command line arguments
@@ -394,7 +423,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenu project;
     private javax.swing.JMenuItem rAPrj;
     private javax.swing.JMenuItem rEmp;
-    private javax.swing.JMenuItem rNPrj;
+    private javax.swing.JMenuItem rN1Prj;
+    private javax.swing.JMenuItem rN2Prj;
     private javax.swing.JMenuItem rPos;
     private javax.swing.JMenuItem rUser;
     private javax.swing.JMenu report;
@@ -409,4 +439,5 @@ public class MainMenu extends javax.swing.JFrame {
     
     private javax.swing.JOptionPane JOptionPane;
     private JLabel lblNewLabel;
+    private JLabel background;
 }

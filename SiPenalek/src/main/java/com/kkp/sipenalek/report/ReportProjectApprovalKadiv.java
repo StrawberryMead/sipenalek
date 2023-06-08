@@ -24,12 +24,12 @@ import java.awt.event.ActionEvent;
  *
  * @author Dell
  */
-public class ReportProjectNonaktif extends javax.swing.JFrame {
+public class ReportProjectApprovalKadiv extends javax.swing.JFrame {
 
     /**
      * Creates new form ReportEmployee
      */
-    public ReportProjectNonaktif() {
+    public ReportProjectApprovalKadiv() {
         initComponents();
         
         
@@ -88,8 +88,8 @@ public class ReportProjectNonaktif extends javax.swing.JFrame {
         JButton PrintToPDF = new JButton("PRINT TO PDF");
         PrintToPDF.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		String reportTitle = "Ongoing Project Report";
-                String outputPath = "E:/ongoing_project_report.pdf";
+        		String reportTitle = "Approval KaDiv Project Report";
+                String outputPath = "E:/approval_kadiv_project_report.pdf";
 
                 try {
                     PdfPrinter.generateReportToPDF(reportTable, reportTitle, outputPath);
@@ -146,7 +146,7 @@ public class ReportProjectNonaktif extends javax.swing.JFrame {
             ((javax.swing.table.DefaultTableModel) reportTable.getModel()).removeRow(0);
         }
         
-        sql = "SELECT project_number, project_name, amount, pm_name, spe_name, notes, status FROM prj_project_main WHERE status != 'Aktif' ORDER BY project_name ASC;";
+        sql = "SELECT project_number, project_name, amount, pm_name, spe_name, notes, status FROM prj_project_main WHERE status = 'Approval Project' ORDER BY project_name ASC;";
         rs = stat.executeQuery(sql);
         int columns = rs.getMetaData().getColumnCount();
         while (rs.next())
@@ -176,13 +176,13 @@ public class ReportProjectNonaktif extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ReportProjectNonaktif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReportProjectApprovalKadiv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ReportProjectNonaktif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReportProjectApprovalKadiv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ReportProjectNonaktif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReportProjectApprovalKadiv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ReportProjectNonaktif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ReportProjectApprovalKadiv.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -192,7 +192,7 @@ public class ReportProjectNonaktif extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ReportProjectNonaktif().setVisible(true);
+                new ReportProjectApprovalKadiv().setVisible(true);
             }
         });
     }
