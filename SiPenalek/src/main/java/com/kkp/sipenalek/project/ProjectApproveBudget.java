@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
+import java.awt.Color;
 
 /**
  *
@@ -23,6 +24,7 @@ public class ProjectApproveBudget extends javax.swing.JFrame {
      * Creates new form ProjectCreate
      */
     public ProjectApproveBudget(int projectId) {
+    	getContentPane().setBackground(new Color(255, 255, 255));
 
         this.name = UserSession.emp_name;
         this.nik = UserSession.nik;
@@ -31,6 +33,8 @@ public class ProjectApproveBudget extends javax.swing.JFrame {
         
         this.projectId = projectId;
         initComponents();
+        
+        setResizable(false);
         
         DBConnection DB = new DBConnection();
         DB.config();
@@ -67,8 +71,11 @@ public class ProjectApproveBudget extends javax.swing.JFrame {
         noteInp = new javax.swing.JTextField();
         commentInp = new javax.swing.JTextField();
         daftarPekerjaan = new javax.swing.JButton();
+        daftarPekerjaan.setForeground(new Color(255, 255, 255));
         saveButton = new javax.swing.JButton();
+        saveButton.setForeground(new Color(255, 255, 255));
         revision = new javax.swing.JButton();
+        revision.setForeground(new Color(255, 255, 255));
         jScrollPane1 = new javax.swing.JScrollPane();
         tableComment = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
@@ -111,7 +118,7 @@ public class ProjectApproveBudget extends javax.swing.JFrame {
 
         noteInp.setEditable(false);
 
-        daftarPekerjaan.setBackground(new java.awt.Color(204, 204, 204));
+        daftarPekerjaan.setBackground(new Color(80, 187, 0));
         daftarPekerjaan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         daftarPekerjaan.setText("DAFTAR PEKERJAAN");
         daftarPekerjaan.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +127,7 @@ public class ProjectApproveBudget extends javax.swing.JFrame {
             }
         });
 
-        saveButton.setBackground(new java.awt.Color(204, 204, 204));
+        saveButton.setBackground(new Color(80, 187, 0));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveButton.setText("SETUJU");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +136,7 @@ public class ProjectApproveBudget extends javax.swing.JFrame {
             }
         });
 
-        revision.setBackground(new java.awt.Color(204, 204, 204));
+        revision.setBackground(new Color(255, 10, 15));
         revision.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         revision.setText("REVISI");
         revision.addActionListener(new java.awt.event.ActionListener() {

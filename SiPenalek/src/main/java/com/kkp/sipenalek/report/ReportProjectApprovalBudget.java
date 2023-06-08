@@ -19,6 +19,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 /**
  *
@@ -30,7 +31,10 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
      * Creates new form ReportEmployee
      */
     public ReportProjectApprovalBudget() {
+    	getContentPane().setBackground(new Color(255, 255, 255));
         initComponents();
+        
+        setResizable(false);
         
         
         DBConnection DB = new DBConnection();
@@ -57,11 +61,12 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         reportTable = new javax.swing.JTable();
         MainMenu = new javax.swing.JButton();
+        MainMenu.setForeground(new Color(255, 255, 255));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("REPORT PROJECT BERJALAN");
+        jLabel1.setText("REPORT PROJECT APPROVAL BUDGET");
 
         reportTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,7 +81,7 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(reportTable);
 
-        MainMenu.setBackground(new java.awt.Color(204, 204, 204));
+        MainMenu.setBackground(new Color(80, 187, 0));
         MainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MainMenu.setText("MAIN MENU");
         MainMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +91,8 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
         });
         
         JButton PrintToPDF = new JButton("PRINT TO PDF");
+        PrintToPDF.setBackground(new Color(80, 187, 0));
+        PrintToPDF.setForeground(new Color(255, 255, 255));
         PrintToPDF.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		String reportTitle = "Approval Budget Project Report";
@@ -107,24 +114,21 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         				.addGroup(layout.createSequentialGroup()
+        					.addComponent(MainMenu)
+        					.addPreferredGap(ComponentPlacement.RELATED)
         					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        						.addGroup(layout.createSequentialGroup()
-        							.addComponent(MainMenu)
-        							.addPreferredGap(ComponentPlacement.RELATED)
-        							.addComponent(PrintToPDF)))
-        					.addContainerGap())
-        				.addGroup(layout.createSequentialGroup()
-        					.addComponent(jLabel1)
-        					.addGap(173))))
+        						.addComponent(jLabel1)
+        						.addComponent(PrintToPDF))))
+        			.addContainerGap())
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
-        			.addContainerGap()
+        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         			.addComponent(jLabel1)
-        			.addPreferredGap(ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(MainMenu)
         				.addComponent(PrintToPDF))

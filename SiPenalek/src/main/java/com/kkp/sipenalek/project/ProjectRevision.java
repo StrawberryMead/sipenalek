@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.NumberFormat;
 import java.util.HashMap;
+import java.awt.Color;
 
 /**
  *
@@ -25,6 +26,7 @@ public class ProjectRevision extends javax.swing.JFrame {
      * Creates new form ProjectCreate
      */
     public ProjectRevision(int projectId) {
+    	getContentPane().setBackground(new Color(255, 255, 255));
 
         this.name = UserSession.emp_name;
         this.nik = UserSession.nik;
@@ -33,6 +35,8 @@ public class ProjectRevision extends javax.swing.JFrame {
         
         this.projectId = projectId;
         initComponents();
+        
+        setResizable(false);
         
         DBConnection DB = new DBConnection();
         DB.config();
@@ -72,10 +76,12 @@ public class ProjectRevision extends javax.swing.JFrame {
         pmInp = new javax.swing.JComboBox<>();
         speInp = new javax.swing.JComboBox<>();
         saveButton = new javax.swing.JButton();
+        saveButton.setForeground(new Color(255, 255, 255));
         jScrollPane1 = new javax.swing.JScrollPane();
         tableComment = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         daftarPekerjaan = new javax.swing.JButton();
+        daftarPekerjaan.setForeground(new Color(255, 255, 255));
         jLabel10 = new javax.swing.JLabel();
         setUpFormats();
         amountInp = new javax.swing.JFormattedTextField(amountFormat);
@@ -112,7 +118,7 @@ public class ProjectRevision extends javax.swing.JFrame {
             }
         });
 
-        saveButton.setBackground(new java.awt.Color(204, 204, 204));
+        saveButton.setBackground(new Color(80, 187, 0));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveButton.setText("AJUKAN");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +143,7 @@ public class ProjectRevision extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("COMMENT HISTORY");
 
-        daftarPekerjaan.setBackground(new java.awt.Color(204, 204, 204));
+        daftarPekerjaan.setBackground(new Color(80, 187, 0));
         daftarPekerjaan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         daftarPekerjaan.setText("DAFTAR PEKERJAAN");
         daftarPekerjaan.addActionListener(new java.awt.event.ActionListener() {

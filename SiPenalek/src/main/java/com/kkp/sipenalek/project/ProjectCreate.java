@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.text.*;
+import java.awt.Color;
 
 /**
  *
@@ -25,8 +26,11 @@ public class ProjectCreate extends javax.swing.JFrame {
      * Creates new form ProjectCreate
      */
     public ProjectCreate() {
+    	getContentPane().setBackground(new Color(255, 255, 255));
         this.name = UserSession.emp_name;
         initComponents();
+        
+        setResizable(false);
         
         DBConnection DB = new DBConnection();
         DB.config();
@@ -65,7 +69,9 @@ public class ProjectCreate extends javax.swing.JFrame {
         pmInp = new javax.swing.JComboBox<>();
         speInp = new javax.swing.JComboBox<>();
         mainMenu = new javax.swing.JButton();
+        mainMenu.setForeground(new Color(255, 255, 255));
         saveButton = new javax.swing.JButton();
+        saveButton.setForeground(new Color(255, 255, 255));
         jLabel10 = new javax.swing.JLabel();
         setUpFormats();
         amountInp = new javax.swing.JFormattedTextField(amountFormat);
@@ -102,7 +108,7 @@ public class ProjectCreate extends javax.swing.JFrame {
             }
         });
 
-        mainMenu.setBackground(new java.awt.Color(204, 204, 204));
+        mainMenu.setBackground(new Color(80, 187, 0));
         mainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         mainMenu.setText("MAIN MENU");
         mainMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +117,7 @@ public class ProjectCreate extends javax.swing.JFrame {
             }
         });
 
-        saveButton.setBackground(new java.awt.Color(204, 204, 204));
+        saveButton.setBackground(new Color(80, 187, 0));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveButton.setText("AJUKAN");
         saveButton.addActionListener(new java.awt.event.ActionListener() {

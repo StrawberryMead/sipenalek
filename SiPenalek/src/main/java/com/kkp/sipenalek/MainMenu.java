@@ -36,6 +36,8 @@ public class MainMenu extends javax.swing.JFrame {
         this.role = UserSession.role;
         this.pos = UserSession.pos;
         initComponents();
+        
+        setResizable(false);
     }
 
     /**
@@ -216,29 +218,25 @@ public class MainMenu extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
+        		.addComponent(background, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         		.addGroup(layout.createSequentialGroup()
+        			.addGap(100)
         			.addGroup(layout.createParallelGroup(Alignment.LEADING)
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(196)
-        					.addComponent(lblWelcome, GroupLayout.PREFERRED_SIZE, 327, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(233)
-        					.addComponent(lblUser, GroupLayout.PREFERRED_SIZE, 212, GroupLayout.PREFERRED_SIZE))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(97)
-        					.addComponent(background)))
-        			.addContainerGap(650, Short.MAX_VALUE))
+        					.addGap(10)
+        					.addComponent(lblUser, GroupLayout.PREFERRED_SIZE, 257, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(lblWelcome, GroupLayout.PREFERRED_SIZE, 280, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-        			.addGap(20)
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGap(10)
         			.addComponent(lblWelcome, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(lblUser, GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
-        			.addGap(26)
-        			.addComponent(background)
-        			.addGap(183))
+        			.addGap(5)
+        			.addComponent(lblUser, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addComponent(background, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         getContentPane().setLayout(layout);
 

@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.awt.Color;
 
 /**
  *
@@ -23,7 +24,10 @@ public class MasterEmployee extends javax.swing.JFrame {
      * Creates new form MasterEmployee
      */
     public MasterEmployee() {
+    	getContentPane().setBackground(new Color(255, 255, 255));
         initComponents();
+        
+        setResizable(false);
         
         DBConnection DB = new DBConnection();
         DB.config();
@@ -56,15 +60,20 @@ public class MasterEmployee extends javax.swing.JFrame {
         namaInput = new javax.swing.JTextField();
         genderInput = new javax.swing.JTextField();
         saveButton = new javax.swing.JButton();
+        saveButton.setForeground(new Color(255, 255, 255));
         resetButton = new javax.swing.JButton();
+        resetButton.setForeground(new Color(255, 255, 255));
         jScrollPane2 = new javax.swing.JScrollPane();
         tableEmployee = new javax.swing.JTable();
         editButton = new javax.swing.JButton();
+        editButton.setForeground(new Color(255, 255, 255));
         jLabel8 = new javax.swing.JLabel();
         posIdInput = new javax.swing.JComboBox<>();
         roleIdInput = new javax.swing.JComboBox<>();
         deleteButton = new javax.swing.JButton();
+        deleteButton.setForeground(new Color(255, 255, 255));
         mainMenu = new javax.swing.JButton();
+        mainMenu.setForeground(new Color(255, 255, 255));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,7 +98,7 @@ public class MasterEmployee extends javax.swing.JFrame {
             }
         });
 
-        saveButton.setBackground(new java.awt.Color(204, 204, 204));
+        saveButton.setBackground(new Color(80, 187, 0));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveButton.setText("SAVE");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +107,7 @@ public class MasterEmployee extends javax.swing.JFrame {
             }
         });
 
-        resetButton.setBackground(new java.awt.Color(204, 204, 204));
+        resetButton.setBackground(new Color(128, 128, 128));
         resetButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         resetButton.setText("RESET");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +134,7 @@ public class MasterEmployee extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tableEmployee);
 
-        editButton.setBackground(new java.awt.Color(204, 204, 204));
+        editButton.setBackground(new Color(80, 187, 0));
         editButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         editButton.setText("EDIT");
         editButton.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +158,7 @@ public class MasterEmployee extends javax.swing.JFrame {
             }
         });
 
-        deleteButton.setBackground(new java.awt.Color(204, 204, 204));
+        deleteButton.setBackground(new Color(255, 10, 15));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         deleteButton.setText("DELETE");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +167,7 @@ public class MasterEmployee extends javax.swing.JFrame {
             }
         });
 
-        mainMenu.setBackground(new java.awt.Color(204, 204, 204));
+        mainMenu.setBackground(new Color(80, 187, 0));
         mainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         mainMenu.setText("MAIN MENU");
         mainMenu.addActionListener(new java.awt.event.ActionListener() {

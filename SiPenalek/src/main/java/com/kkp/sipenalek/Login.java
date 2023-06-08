@@ -29,6 +29,8 @@ public class Login extends javax.swing.JFrame {
         DB.config();
         con = DB.con;
         stat = DB.stm;
+
+        setResizable(false);
     }
 
     /**

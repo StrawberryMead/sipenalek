@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.awt.Color;
 /**
  *
  * @author Dell
@@ -26,12 +27,15 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
      * Creates new form DaftarPekerjaan
      */
     public DaftarPekerjaan(String status) {
+    	getContentPane().setBackground(new Color(255, 255, 255));
         this.name = UserSession.emp_name;
         this.nik = UserSession.nik;
         this.role = UserSession.role;
         this.pos = UserSession.pos;
         this.status = status;
         initComponents();
+
+        setResizable(false);
         
         DBConnection DB = new DBConnection();
         DB.config();
@@ -57,7 +61,9 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
         tableDaftarPekerjaan = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         process = new javax.swing.JButton();
+        process.setForeground(new Color(255, 255, 255));
         MainMenu = new javax.swing.JButton();
+        MainMenu.setForeground(new Color(255, 255, 255));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,7 +88,7 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("DAFTAR PEKERJAAN");
 
-        process.setBackground(new java.awt.Color(204, 204, 204));
+        process.setBackground(new Color(80, 187, 0));
         process.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         process.setText("PROSES");
         process.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +97,7 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
             }
         });
 
-        MainMenu.setBackground(new java.awt.Color(204, 204, 204));
+        MainMenu.setBackground(new Color(80, 187, 0));
         MainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MainMenu.setText("MAIN MENU");
         MainMenu.addActionListener(new java.awt.event.ActionListener() {

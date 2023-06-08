@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.awt.Color;
 
 /**
  *
@@ -22,7 +23,10 @@ public class MasterPosition extends javax.swing.JFrame {
      * Creates new form MasterEmployee
      */
     public MasterPosition() {
+    	getContentPane().setBackground(new Color(255, 255, 255));
         initComponents();
+        
+        setResizable(false);
         
         DBConnection DB = new DBConnection();
         DB.config();
@@ -48,12 +52,17 @@ public class MasterPosition extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         saveButton = new javax.swing.JButton();
+        saveButton.setForeground(new Color(255, 255, 255));
         resetButton = new javax.swing.JButton();
+        resetButton.setForeground(new Color(255, 255, 255));
         jScrollPane2 = new javax.swing.JScrollPane();
         tablePosition = new javax.swing.JTable();
         editButton = new javax.swing.JButton();
+        editButton.setForeground(new Color(255, 255, 255));
         deleteButton = new javax.swing.JButton();
+        deleteButton.setForeground(new Color(255, 255, 255));
         mainMenu = new javax.swing.JButton();
+        mainMenu.setForeground(new Color(255, 255, 255));
         posInput = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,7 +73,7 @@ public class MasterPosition extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("POSISI");
 
-        saveButton.setBackground(new java.awt.Color(204, 204, 204));
+        saveButton.setBackground(new Color(80, 187, 0));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         saveButton.setText("SAVE");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +82,7 @@ public class MasterPosition extends javax.swing.JFrame {
             }
         });
 
-        resetButton.setBackground(new java.awt.Color(204, 204, 204));
+        resetButton.setBackground(new Color(128, 128, 128));
         resetButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         resetButton.setText("RESET");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +109,7 @@ public class MasterPosition extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tablePosition);
 
-        editButton.setBackground(new java.awt.Color(204, 204, 204));
+        editButton.setBackground(new Color(80, 187, 0));
         editButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         editButton.setText("EDIT");
         editButton.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +118,7 @@ public class MasterPosition extends javax.swing.JFrame {
             }
         });
 
-        deleteButton.setBackground(new java.awt.Color(204, 204, 204));
+        deleteButton.setBackground(new Color(255, 10, 15));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         deleteButton.setText("DELETE");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +127,7 @@ public class MasterPosition extends javax.swing.JFrame {
             }
         });
 
-        mainMenu.setBackground(new java.awt.Color(204, 204, 204));
+        mainMenu.setBackground(new Color(80, 187, 0));
         mainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         mainMenu.setText("MAIN MENU");
         mainMenu.addActionListener(new java.awt.event.ActionListener() {
