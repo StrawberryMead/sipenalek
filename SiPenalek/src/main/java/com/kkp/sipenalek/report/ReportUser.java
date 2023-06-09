@@ -19,6 +19,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 /**
  *
  * @author Dell
@@ -29,6 +30,7 @@ public class ReportUser extends javax.swing.JFrame {
      * Creates new form ReportEmployee
      */
     public ReportUser() {
+    	getContentPane().setBackground(new Color(255, 255, 255));
         initComponents();
         
         
@@ -56,6 +58,7 @@ public class ReportUser extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         reportTable = new javax.swing.JTable();
         MainMenu = new javax.swing.JButton();
+        MainMenu.setForeground(new Color(255, 255, 255));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,7 +78,7 @@ public class ReportUser extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(reportTable);
 
-        MainMenu.setBackground(new java.awt.Color(204, 204, 204));
+        MainMenu.setBackground(new Color(80, 187, 0));
         MainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MainMenu.setText("MAIN MENU");
         MainMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +88,8 @@ public class ReportUser extends javax.swing.JFrame {
         });
         
         JButton PrintToPDF = new JButton("PRINT TO PDF");
+        PrintToPDF.setBackground(new Color(80, 187, 0));
+        PrintToPDF.setForeground(new Color(255, 255, 255));
         PrintToPDF.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         		String reportTitle = "User Report";
