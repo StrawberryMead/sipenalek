@@ -17,6 +17,10 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 /**
  *
  * @author Dell
@@ -105,38 +109,46 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
                 MainMenuActionPerformed(evt);
             }
         });
+        
+        JLabel lblJenisPekerjaan = new JLabel(this.status);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(MainMenu)
-                        .addGap(18, 18, 18)
-                        .addComponent(process)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+        						.addGroup(layout.createSequentialGroup()
+        							.addComponent(MainMenu)
+        							.addGap(18)
+        							.addComponent(process)
+        							.addGap(0, 389, Short.MAX_VALUE))))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(224)
+        					.addComponent(jLabel1))
+        				.addGroup(layout.createSequentialGroup()
+        					.addGap(250)
+        					.addComponent(lblJenisPekerjaan)))
+        			.addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(process)
-                    .addComponent(MainMenu))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addComponent(jLabel1)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(lblJenisPekerjaan)
+        			.addGap(15)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(process)
+        				.addComponent(MainMenu))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 269, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

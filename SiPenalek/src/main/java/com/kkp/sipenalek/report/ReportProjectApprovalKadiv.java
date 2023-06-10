@@ -81,7 +81,7 @@ public class ReportProjectApprovalKadiv extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(reportTable);
 
-        MainMenu.setBackground(new java.awt.Color(204, 204, 204));
+        MainMenu.setBackground(new Color(80, 187, 0));
         MainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MainMenu.setText("MAIN MENU");
         MainMenu.addActionListener(new java.awt.event.ActionListener() {
