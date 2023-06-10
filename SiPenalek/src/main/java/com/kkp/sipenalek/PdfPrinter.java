@@ -2,6 +2,8 @@ package com.kkp.sipenalek;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.ByteArrayOutputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -36,8 +38,15 @@ public class PdfPrinter {
         float cellMargin = 5;
 
         // Load the logo image
-        File logoFile = new File("E:\\java\\SiPenalek\\SiPenalek\\src\\main\\resources\\logo.png");
-        PDImageXObject logoImage = PDImageXObject.createFromFileByContent(logoFile, document);
+        InputStream logoStream = PdfPrinter.class.getResourceAsStream("/logo.png");
+        ByteArrayOutputStream logoByteArray = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int bytesRead;
+        while ((bytesRead = logoStream.read(buffer)) != -1) {
+            logoByteArray.write(buffer, 0, bytesRead);
+        }
+        logoByteArray.flush();
+        PDImageXObject logoImage = PDImageXObject.createFromByteArray(document, logoByteArray.toByteArray(), "logo");
 
         // Draw the logo
         float logoWidth = 100; // Adjust the logo width as needed

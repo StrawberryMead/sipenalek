@@ -213,7 +213,7 @@ public class MainMenu extends javax.swing.JFrame {
         lblUser.setFont(new Font("Tahoma", Font.PLAIN, 13));
         
         background = new JLabel("");
-        background.setIcon(new ImageIcon("E:\\java\\SiPenalek\\SiPenalek\\src\\main\\resources\\bg.png"));
+        background.setIcon(new ImageIcon(getClass().getResource("/bg.png")));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
