@@ -112,7 +112,7 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
         });
         
         if(this.status == "Revisi") {
-        	this.jenisPekerjaan = "DAFTAR REVISI";
+        	this.jenisPekerjaan = "    REVISI PROJECT";
         }else {
         	this.jenisPekerjaan = this.status.toUpperCase();
         }
