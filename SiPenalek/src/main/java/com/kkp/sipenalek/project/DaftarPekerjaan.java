@@ -21,6 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Font;
 /**
  *
  * @author Dell
@@ -110,7 +111,13 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
             }
         });
         
-        JLabel lblJenisPekerjaan = new JLabel(this.status);
+        if(this.status == "Revisi") {
+        	this.jenisPekerjaan = "DAFTAR REVISI";
+        }else {
+        	this.jenisPekerjaan = this.status.toUpperCase();
+        }
+    	JLabel jLabelJenisPekerjaan = new JLabel(this.jenisPekerjaan);
+        jLabelJenisPekerjaan.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -128,10 +135,9 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
         							.addGap(0, 389, Short.MAX_VALUE))))
         				.addGroup(layout.createSequentialGroup()
         					.addGap(224)
-        					.addComponent(jLabel1))
-        				.addGroup(layout.createSequentialGroup()
-        					.addGap(250)
-        					.addComponent(lblJenisPekerjaan)))
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(jLabelJenisPekerjaan)
+        						.addComponent(jLabel1))))
         			.addContainerGap())
         );
         layout.setVerticalGroup(
@@ -139,7 +145,7 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
         		.addGroup(layout.createSequentialGroup()
         			.addComponent(jLabel1)
         			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(lblJenisPekerjaan)
+        			.addComponent(jLabelJenisPekerjaan)
         			.addGap(15)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(process)
@@ -260,4 +266,5 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
     private javax.swing.JOptionPane JOptionPane;
     
     private int projectId;
+    private String jenisPekerjaan;
 }
