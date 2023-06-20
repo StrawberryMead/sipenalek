@@ -136,7 +136,7 @@ public class PdfPrinter {
         }
 
         // Draw signature column
-        float signatureX = margin + tableWidth - 150;
+        float signatureX = margin + tableWidth - 180;
         float signatureY = yPosition - 60; // Mengatur jarak vertikal menjadi 120px
 
         contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
@@ -146,13 +146,13 @@ public class PdfPrinter {
         String tanggal = currentDate.format(DateTimeFormatter.ofPattern("d MMMM yyyy", new Locale("id")));
         String hari = currentDate.getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("id"));
         String kota = "Jakarta";
-	    contentStream.showText(kota);
+	    contentStream.showText(kota + ", " + hari + " " + tanggal);
 	    contentStream.newLine();
-        contentStream.showText(hari + ", " + tanggal);
+        contentStream.showText("Kepala Divisi");
         contentStream.endText();
 
         float lineStartX = signatureX;
-        float lineEndX = signatureX + 100;
+        float lineEndX = signatureX + 170;
         float lineY = signatureY - 80;
 
         contentStream.setLineWidth(1f);
@@ -161,20 +161,20 @@ public class PdfPrinter {
         contentStream.stroke();
 
         // Draw signature name and position
-        float textX = signatureX;
+        float textX = signatureX + 60;
         float textY = lineY - 15; // Menurunkan posisi teks di bawah garis
 
         contentStream.setFont(PDType1Font.HELVETICA, 12);
         contentStream.beginText();
         contentStream.newLineAtOffset(textX, textY);
         contentStream.showText("Siswanto");
-        contentStream.newLine();
-        contentStream.showText("Kepala Divisi");
         contentStream.endText();
         contentStream.close();
 
         outputPath = System.getProperty("user.dir") + File.separator + outputPath;
         document.save(outputPath);
         document.close();
+        
+        PdfOpener.openPDF(outputPath);
     }
 }
