@@ -13,6 +13,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.awt.Color;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
  *
@@ -74,20 +77,20 @@ public class MasterUser extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("DATA USER");
+        jLabel1.setText("DATA PENGGUNA");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("USERNAME");
+        jLabel2.setText("NAMA PENGGUNA");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("PASSWORD");
+        jLabel3.setText("KATA SANDI");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("PEGAWAI");
 
         saveButton.setBackground(new Color(80, 187, 0));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        saveButton.setText("SAVE");
+        saveButton.setText("SIMPAN");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
@@ -96,7 +99,7 @@ public class MasterUser extends javax.swing.JFrame {
 
         resetButton.setBackground(new Color(128, 128, 128));
         resetButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        resetButton.setText("RESET");
+        resetButton.setText("ULANGI");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetButtonActionPerformed(evt);
@@ -111,7 +114,7 @@ public class MasterUser extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "USERNAME", "PEGAWAI", "NIK"
+                "#", "NAMA PENGGUNA", "PEGAWAI", "NIK"
             }
         ));
         tableEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,7 +126,7 @@ public class MasterUser extends javax.swing.JFrame {
 
         editButton.setBackground(new Color(80, 187, 0));
         editButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        editButton.setText("EDIT");
+        editButton.setText("UBAH");
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
@@ -138,7 +141,7 @@ public class MasterUser extends javax.swing.JFrame {
 
         deleteButton.setBackground(new Color(255, 10, 15));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        deleteButton.setText("DELETE");
+        deleteButton.setText("HAPUS");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
@@ -147,7 +150,7 @@ public class MasterUser extends javax.swing.JFrame {
 
         mainMenu.setBackground(new Color(80, 187, 0));
         mainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        mainMenu.setText("MAIN MENU");
+        mainMenu.setText("HALAMAN UTAMA");
         mainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mainMenuActionPerformed(evt);
@@ -155,72 +158,70 @@ public class MasterUser extends javax.swing.JFrame {
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(239, 239, 239))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5))
-                        .addGap(0, 38, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(mainMenu)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nikInput, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(namaInput)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(resetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(deleteButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(empIdInput, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(35, 35, 35))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        						.addComponent(jScrollPane2, GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
+        						.addGroup(layout.createSequentialGroup()
+        							.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        								.addComponent(jLabel2)
+        								.addComponent(jLabel3)
+        								.addComponent(jLabel5)
+        								.addComponent(mainMenu))
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        								.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        									.addGap(10)
+        									.addComponent(resetButton, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+        									.addGap(18)
+        									.addComponent(deleteButton)
+        									.addGap(18)
+        									.addComponent(editButton, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
+        									.addGap(18)
+        									.addComponent(saveButton, GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
+        								.addComponent(empIdInput, 0, 433, Short.MAX_VALUE)
+        								.addComponent(namaInput, GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+        								.addComponent(nikInput, GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE))))
+        					.addContainerGap())
+        				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+        					.addComponent(jLabel1)
+        					.addGap(229))))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(nikInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(namaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(empIdInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mainMenu)
-                    .addComponent(resetButton)
-                    .addComponent(deleteButton)
-                    .addComponent(editButton)
-                    .addComponent(saveButton))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addComponent(jLabel1)
+        			.addGap(26)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(jLabel2)
+        				.addComponent(nikInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.TRAILING)
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(jLabel3)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(jLabel5)
+        					.addGap(5))
+        				.addGroup(layout.createSequentialGroup()
+        					.addComponent(namaInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addComponent(empIdInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+        				.addComponent(mainMenu)
+        				.addComponent(resetButton)
+        				.addComponent(deleteButton)
+        				.addComponent(editButton)
+        				.addComponent(saveButton))
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(jScrollPane2, GroupLayout.PREFERRED_SIZE, 259, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(23, Short.MAX_VALUE))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

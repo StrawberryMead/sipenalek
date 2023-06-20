@@ -66,7 +66,7 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("REPORT PROJECT APPROVAL BUDGET");
+        jLabel1.setText("LAPORAN PERSETUJUAN ANGGARAN");
 
         reportTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,33 +76,33 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "NUMBER", "NAME", "AMOUNT", "MANAGER", "SPECIALIST", "NOTES", "STATUS"
+            		"NOMOR", "NAMA PROYEK", "ANGGARAN", "MANAJER", "PENANGGUNG JAWAB", "CATATAN"
             }
         ));
         jScrollPane1.setViewportView(reportTable);
 
         MainMenu.setBackground(new Color(80, 187, 0));
         MainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        MainMenu.setText("MAIN MENU");
+        MainMenu.setText("HALAMAN UTAMA");
         MainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MainMenuActionPerformed(evt);
             }
         });
         
-        JButton PrintToPDF = new JButton("PRINT TO PDF");
+        JButton PrintToPDF = new JButton("CETAK KE PDF");
         PrintToPDF.setBackground(new Color(80, 187, 0));
         PrintToPDF.setForeground(new Color(255, 255, 255));
         PrintToPDF.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		String reportTitle = "Approval Budget Project Report";
-                String outputPath = "E:/approval_budget_project_report.pdf";
+        		String reportTitle = "Laporan Persetujuan Anggaran";
+                String outputPath = "laporan_persetujuan_anggaran.pdf";
 
                 try {
                     PdfPrinter.generateReportToPDF(reportTable, reportTitle, outputPath);
-                    JOptionPane.showMessageDialog(null, "Report generated successfully.");
+                    JOptionPane.showMessageDialog(null, "Laporan Berhasil Dicetak.");
                 } catch (IOException err) {
-                    JOptionPane.showMessageDialog(null, "An error occurred while generating the report: " + err.getMessage());
+                    JOptionPane.showMessageDialog(null, "Terjadi Kesalahan Saat Mencetak Laporan: " + err.getMessage());
                 }
         	}
         });
@@ -118,17 +118,19 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
         				.addGroup(layout.createSequentialGroup()
         					.addComponent(MainMenu)
         					.addPreferredGap(ComponentPlacement.RELATED)
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jLabel1)
-        						.addComponent(PrintToPDF))))
+        					.addComponent(PrintToPDF)))
         			.addContainerGap())
+        		.addGroup(Alignment.LEADING, layout.createSequentialGroup()
+        			.addGap(101)
+        			.addComponent(jLabel1)
+        			.addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-        	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
-        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        	layout.createParallelGroup(Alignment.TRAILING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
         			.addComponent(jLabel1)
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
+        			.addPreferredGap(ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(MainMenu)
         				.addComponent(PrintToPDF))
@@ -150,7 +152,7 @@ public class ReportProjectApprovalBudget extends javax.swing.JFrame {
             ((javax.swing.table.DefaultTableModel) reportTable.getModel()).removeRow(0);
         }
         
-        sql = "SELECT project_number, project_name, amount, pm_name, spe_name, notes, status FROM prj_project_main WHERE status = 'Approval Budget' ORDER BY project_name ASC;";
+        sql = "SELECT project_number, project_name, amount, pm_name, spe_name, notes FROM prj_project_main WHERE status = 'Approval Budget' ORDER BY project_name ASC;";
         rs = stat.executeQuery(sql);
         int columns = rs.getMetaData().getColumnCount();
         while (rs.next())

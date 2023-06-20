@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.ByteArrayOutputStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -134,13 +136,19 @@ public class PdfPrinter {
         }
 
         // Draw signature column
-        float signatureX = margin + tableWidth - 80;
+        float signatureX = margin + tableWidth - 150;
         float signatureY = yPosition - 60; // Mengatur jarak vertikal menjadi 120px
 
         contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
         contentStream.beginText();
         contentStream.newLineAtOffset(signatureX, signatureY);
-        contentStream.showText("Jakarta, " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd MMMM yyyy")));
+        LocalDate currentDate = LocalDate.now();
+        String tanggal = currentDate.format(DateTimeFormatter.ofPattern("d MMMM yyyy", new Locale("id")));
+        String hari = currentDate.getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("id"));
+        String kota = "Jakarta";
+	    contentStream.showText(kota);
+	    contentStream.newLine();
+        contentStream.showText(hari + ", " + tanggal);
         contentStream.endText();
 
         float lineStartX = signatureX;
@@ -165,6 +173,7 @@ public class PdfPrinter {
         contentStream.endText();
         contentStream.close();
 
+        outputPath = System.getProperty("user.dir") + File.separator + outputPath;
         document.save(outputPath);
         document.close();
     }

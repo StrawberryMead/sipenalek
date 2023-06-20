@@ -63,7 +63,7 @@ public class ReportUser extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("REPORT USER");
+        jLabel1.setText("LAPORAN PENGGUNA");
 
         reportTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -73,14 +73,14 @@ public class ReportUser extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "USERNAME", "NAMA", "POSISI", "ROLE"
+                "NAMA PENGGUNA", "NAMA", "POSISI", "PERAN"
             }
         ));
         jScrollPane1.setViewportView(reportTable);
 
         MainMenu.setBackground(new Color(80, 187, 0));
         MainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        MainMenu.setText("MAIN MENU");
+        MainMenu.setText("HALAMAN UTAMA");
         MainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MainMenuActionPerformed(evt);
@@ -92,14 +92,14 @@ public class ReportUser extends javax.swing.JFrame {
         PrintToPDF.setForeground(new Color(255, 255, 255));
         PrintToPDF.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		String reportTitle = "User Report";
-                String outputPath = "E:/user_report.pdf";
+        		String reportTitle = "Laporan Pengguna";
+                String outputPath = "laporan_pengguna.pdf";
 
                 try {
                     PdfPrinter.generateReportToPDF(reportTable, reportTitle, outputPath);
-                    JOptionPane.showMessageDialog(null, "Report generated successfully.");
+                    JOptionPane.showMessageDialog(null, "Laporan Berhasil Dicetak.");
                 } catch (IOException err) {
-                    JOptionPane.showMessageDialog(null, "An error occurred while generating the report: " + err.getMessage());
+                    JOptionPane.showMessageDialog(null, "Terjadi Kesalahan Saat Mencetak Laporan: " + err.getMessage());
                 }
         	}
         });
@@ -114,21 +114,18 @@ public class ReportUser extends javax.swing.JFrame {
         					.addContainerGap()
         					.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         				.addGroup(layout.createSequentialGroup()
+        					.addContainerGap()
+        					.addComponent(MainMenu)
+        					.addPreferredGap(ComponentPlacement.RELATED)
         					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addGroup(layout.createSequentialGroup()
-        							.addGap(134)
-        							.addComponent(jLabel1))
-        						.addGroup(layout.createSequentialGroup()
-        							.addContainerGap()
-        							.addComponent(MainMenu)
-        							.addPreferredGap(ComponentPlacement.RELATED)
-        							.addComponent(PrintToPDF)))
-        					.addGap(0, 169, Short.MAX_VALUE)))
+        						.addComponent(jLabel1)
+        						.addComponent(PrintToPDF))
+        					.addPreferredGap(ComponentPlacement.RELATED, 150, Short.MAX_VALUE)))
         			.addContainerGap())
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(layout.createSequentialGroup()
+        		.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
         			.addContainerGap()
         			.addComponent(jLabel1)
         			.addPreferredGap(ComponentPlacement.RELATED, 11, Short.MAX_VALUE)

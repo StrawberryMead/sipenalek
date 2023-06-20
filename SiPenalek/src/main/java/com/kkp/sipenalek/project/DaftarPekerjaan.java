@@ -38,6 +38,13 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
         this.role = UserSession.role;
         this.pos = UserSession.pos;
         this.status = status;
+        if(status.equals("REVISI PROYEK")){
+            this.whereClause = "Revisi"; 
+        }else if(status.equals("PERSETUJUAN ANGGARAN")){
+            this.whereClause = "Approval Budget"; 
+        }else if(status.equals("PERSETUJUAN KEPALA DIVISI")){
+            this.whereClause = "Approval Project";        
+        }
         initComponents();
 
         setResizable(false);
@@ -80,7 +87,7 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "PROJECT NUMBER", "PROJECT NAME", "BUDGET", "PROJECT DATE", "STATUS"
+                "#", "NOMOR PROYEK", "NAMA PROYEK", "ANGGARAN", "TANGGAL PROYEK", "STATUS"
             }
         ));
         tableDaftarPekerjaan.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,8 +97,10 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableDaftarPekerjaan);
 
+        
+        this.jenisPekerjaan = this.status.toUpperCase();
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("DAFTAR PEKERJAAN");
+        jLabel1.setText("DAFTAR PEKERJAAN "+this.jenisPekerjaan);
 
         process.setBackground(new Color(80, 187, 0));
         process.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -104,20 +113,12 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
 
         MainMenu.setBackground(new Color(80, 187, 0));
         MainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        MainMenu.setText("MAIN MENU");
+        MainMenu.setText("HALAMAN UTAMA");
         MainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MainMenuActionPerformed(evt);
             }
         });
-        
-        if(this.status == "Revisi") {
-        	this.jenisPekerjaan = "    REVISI PROJECT";
-        }else {
-        	this.jenisPekerjaan = this.status.toUpperCase();
-        }
-    	JLabel jLabelJenisPekerjaan = new JLabel(this.jenisPekerjaan);
-        jLabelJenisPekerjaan.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(
@@ -127,26 +128,22 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
         				.addGroup(layout.createSequentialGroup()
         					.addContainerGap()
         					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+        						.addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         						.addGroup(layout.createSequentialGroup()
         							.addComponent(MainMenu)
         							.addGap(18)
         							.addComponent(process)
-        							.addGap(0, 389, Short.MAX_VALUE))))
+        							.addPreferredGap(ComponentPlacement.RELATED, 389, Short.MAX_VALUE))))
         				.addGroup(layout.createSequentialGroup()
-        					.addGap(224)
-        					.addGroup(layout.createParallelGroup(Alignment.LEADING)
-        						.addComponent(jLabelJenisPekerjaan)
-        						.addComponent(jLabel1))))
+        					.addGap(177)
+        					.addComponent(jLabel1)))
         			.addContainerGap())
         );
         layout.setVerticalGroup(
         	layout.createParallelGroup(Alignment.TRAILING)
         		.addGroup(layout.createSequentialGroup()
         			.addComponent(jLabel1)
-        			.addPreferredGap(ComponentPlacement.RELATED)
-        			.addComponent(jLabelJenisPekerjaan)
-        			.addGap(15)
+        			.addGap(21)
         			.addGroup(layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(process)
         				.addComponent(MainMenu))
@@ -167,17 +164,17 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
 
     private void processActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processActionPerformed
         // TODO add your handling code here:
-        if(status.equals("Revisi")){
+        if(whereClause.equals("Revisi")){
             ProjectRevision pekerjaan = new ProjectRevision(projectId);
             pekerjaan.setLocationRelativeTo(null);
             pekerjaan.setVisible(true); 
             dispose();
-        }else if(status.equals("Approval Budget")){
+        }else if(whereClause.equals("Approval Budget")){
             ProjectApproveBudget pekerjaan = new ProjectApproveBudget(projectId);
             pekerjaan.setLocationRelativeTo(null);
             pekerjaan.setVisible(true); 
             dispose();
-        }else if(status.equals("Approval Project")){
+        }else if(whereClause.equals("Approval Project")){
             ProjectApproveProject pekerjaan = new ProjectApproveProject(projectId);
             pekerjaan.setLocationRelativeTo(null);
             pekerjaan.setVisible(true); 
@@ -194,7 +191,7 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
             ((javax.swing.table.DefaultTableModel) tableDaftarPekerjaan.getModel()).removeRow(0);
         }
         
-        sql = "SELECT id, project_number, project_name, amount, project_date, status FROM prj_project_main WHERE status = '"+status+"';";
+        sql = "SELECT id, project_number, project_name, amount, project_date, status FROM prj_project_main WHERE status = '"+whereClause+"';";
         rs = stat.executeQuery(sql);
         int columns = rs.getMetaData().getColumnCount();
         while (rs.next())
@@ -267,4 +264,5 @@ public class DaftarPekerjaan extends javax.swing.JFrame {
     
     private int projectId;
     private String jenisPekerjaan;
+    private String whereClause;
 }

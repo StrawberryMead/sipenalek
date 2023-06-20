@@ -78,7 +78,7 @@ public class MasterEmployee extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("DATA KARYAWAN");
+        jLabel1.setText("DATA PEGAWAI");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("NIK");
@@ -87,7 +87,7 @@ public class MasterEmployee extends javax.swing.JFrame {
         jLabel3.setText("NAMA");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("GENDER");
+        jLabel4.setText("KELAMIN");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("POSISI");
@@ -100,7 +100,7 @@ public class MasterEmployee extends javax.swing.JFrame {
 
         saveButton.setBackground(new Color(80, 187, 0));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        saveButton.setText("SAVE");
+        saveButton.setText("SIMPAN");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
@@ -109,7 +109,7 @@ public class MasterEmployee extends javax.swing.JFrame {
 
         resetButton.setBackground(new Color(128, 128, 128));
         resetButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        resetButton.setText("RESET");
+        resetButton.setText("ULANGI");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetButtonActionPerformed(evt);
@@ -124,7 +124,7 @@ public class MasterEmployee extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NIK", "NAMA", "GENDER", "POSISI", "ROLE"
+                "#", "NIK", "NAMA", "KELAMIN", "POSISI", "PERAN"
             }
         ));
         tableEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -136,7 +136,7 @@ public class MasterEmployee extends javax.swing.JFrame {
 
         editButton.setBackground(new Color(80, 187, 0));
         editButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        editButton.setText("EDIT");
+        editButton.setText("UBAH");
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
@@ -144,7 +144,7 @@ public class MasterEmployee extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setText("ROLE");
+        jLabel8.setText("PERAN");
 
         posIdInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +160,7 @@ public class MasterEmployee extends javax.swing.JFrame {
 
         deleteButton.setBackground(new Color(255, 10, 15));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        deleteButton.setText("DELETE");
+        deleteButton.setText("HAPUS");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
@@ -169,7 +169,7 @@ public class MasterEmployee extends javax.swing.JFrame {
 
         mainMenu.setBackground(new Color(80, 187, 0));
         mainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        mainMenu.setText("MAIN MENU");
+        mainMenu.setText("HALAMAN UTAMA");
         mainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mainMenuActionPerformed(evt);

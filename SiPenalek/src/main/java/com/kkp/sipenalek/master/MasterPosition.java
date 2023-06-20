@@ -75,7 +75,7 @@ public class MasterPosition extends javax.swing.JFrame {
 
         saveButton.setBackground(new Color(80, 187, 0));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        saveButton.setText("SAVE");
+        saveButton.setText("SIMPAN");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
@@ -84,7 +84,7 @@ public class MasterPosition extends javax.swing.JFrame {
 
         resetButton.setBackground(new Color(128, 128, 128));
         resetButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        resetButton.setText("RESET");
+        resetButton.setText("ULANGI");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetButtonActionPerformed(evt);
@@ -99,7 +99,7 @@ public class MasterPosition extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "ID", "POSISI"
+                "#", "POSISI"
             }
         ));
         tablePosition.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,7 +111,7 @@ public class MasterPosition extends javax.swing.JFrame {
 
         editButton.setBackground(new Color(80, 187, 0));
         editButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        editButton.setText("EDIT");
+        editButton.setText("UBAH");
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
@@ -120,7 +120,7 @@ public class MasterPosition extends javax.swing.JFrame {
 
         deleteButton.setBackground(new Color(255, 10, 15));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        deleteButton.setText("DELETE");
+        deleteButton.setText("HAPUS");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
@@ -129,7 +129,7 @@ public class MasterPosition extends javax.swing.JFrame {
 
         mainMenu.setBackground(new Color(80, 187, 0));
         mainMenu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        mainMenu.setText("MAIN MENU");
+        mainMenu.setText("HALAMAN UTAMA");
         mainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mainMenuActionPerformed(evt);

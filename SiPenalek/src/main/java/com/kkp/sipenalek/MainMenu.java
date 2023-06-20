@@ -74,9 +74,9 @@ public class MainMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        master.setText("Master");
+        master.setText("Utama");
 
-        position.setText("Posisition");
+        position.setText("Posisi");
         position.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 positionActionPerformed(evt);
@@ -84,7 +84,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         master.add(position);
 
-        employee.setText("Employee");
+        employee.setText("Pegawai");
         employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 employeeActionPerformed(evt);
@@ -92,7 +92,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         master.add(employee);
 
-        user.setText("User");
+        user.setText("Pengguna");
         user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userActionPerformed(evt);
@@ -102,9 +102,9 @@ public class MainMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(master);
 
-        project.setText("Project");
+        project.setText("Proyek");
 
-        create.setText("Create Project");
+        create.setText("Buat Proyek");
         create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createActionPerformed(evt);
@@ -112,7 +112,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         project.add(create);
 
-        approvalBudget.setText("Approval Budget");
+        approvalBudget.setText("Persetujuan Anggaran");
         approvalBudget.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approvalBudgetActionPerformed(evt);
@@ -120,7 +120,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         project.add(approvalBudget);
 
-        approval.setText("Approval Project");
+        approval.setText("Persetujuan Kepala Divisi");
         approval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 approvalActionPerformed(evt);
@@ -128,7 +128,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         project.add(approval);
 
-        revision.setText("Revisi Project");
+        revision.setText("Revisi Proyek");
         revision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 revisionActionPerformed(evt);
@@ -138,7 +138,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(project);
 
-        report.setText("Report");
+        report.setText("Laporan");
 
         rPos.setText("Posisi");
         rPos.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +156,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         report.add(rEmp);
 
-        rUser.setText("User");
+        rUser.setText("Pengguna");
         rUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rUserActionPerformed(evt);
@@ -164,7 +164,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         report.add(rUser);
 
-        rAPrj.setText("Projek Aktif");
+        rAPrj.setText("Proyek Aktif");
         rAPrj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rAPrjActionPerformed(evt);
@@ -172,7 +172,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         report.add(rAPrj);
 
-        rN1Prj.setText("Projek Approval Budget");
+        rN1Prj.setText("Persetujuan Anggaran");
         rN1Prj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             	rN1PrjActionPerformed(evt);
@@ -180,7 +180,7 @@ public class MainMenu extends javax.swing.JFrame {
         });
         report.add(rN1Prj);
 
-        rN2Prj.setText("Projek Approval KaDiv");
+        rN2Prj.setText("Persetujuan Kepala Divisi");
         rN2Prj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
             	rN2PrjActionPerformed(evt);
@@ -190,9 +190,9 @@ public class MainMenu extends javax.swing.JFrame {
         
         jMenuBar1.add(report);
 
-        options.setText("Options");
+        options.setText("Setelan");
 
-        logout.setText("Log Out");
+        logout.setText("Keluar");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
@@ -246,11 +246,11 @@ public class MainMenu extends javax.swing.JFrame {
     private void approvalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approvalActionPerformed
         // TODO add your handling code here:
         if(role.equals("Approver")){
-            DaftarPekerjaan daftarPekerjaan = new DaftarPekerjaan("Approval Project");
+            DaftarPekerjaan daftarPekerjaan = new DaftarPekerjaan("PERSETUJUAN KEPALA DIVISI");
             daftarPekerjaan.setLocationRelativeTo(null);
             daftarPekerjaan.setVisible(true); 
         }else{
-            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Menu Ini!");
+            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Halaman Ini!");
         }
     }//GEN-LAST:event_approvalActionPerformed
 
@@ -261,7 +261,7 @@ public class MainMenu extends javax.swing.JFrame {
             masterPos.setLocationRelativeTo(null);
             masterPos.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Menu Ini!");
+            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Halaman Ini!");
         }
     }//GEN-LAST:event_positionActionPerformed
 
@@ -272,7 +272,7 @@ public class MainMenu extends javax.swing.JFrame {
             masterEmployee.setLocationRelativeTo(null);
             masterEmployee.setVisible(true); 
         }else{
-            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Menu Ini!");
+            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Halaman Ini!");
         }
     }//GEN-LAST:event_employeeActionPerformed
 
@@ -283,13 +283,13 @@ public class MainMenu extends javax.swing.JFrame {
             masterUser.setLocationRelativeTo(null);
             masterUser.setVisible(true); 
         }else{
-            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Menu Ini!");
+            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Halaman Ini!");
         }
     }//GEN-LAST:event_userActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Logout Successful");
+        JOptionPane.showMessageDialog(null, "Anda Berhasil Keluar!");
         this.setVisible(false); //you can't see me!
         this.dispose(); //Destroy the JFrame object
         Login login = new Login();
@@ -304,29 +304,29 @@ public class MainMenu extends javax.swing.JFrame {
             projectCreate.setLocationRelativeTo(null);
             projectCreate.setVisible(true); 
         }else{
-            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Menu Ini!");
+            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Halaman Ini!");
         }
     }//GEN-LAST:event_createActionPerformed
 
     private void revisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revisionActionPerformed
         // TODO add your handling code here:
         if(role.equals("PIC")){
-            DaftarPekerjaan daftarPekerjaan = new DaftarPekerjaan("Revisi");
+            DaftarPekerjaan daftarPekerjaan = new DaftarPekerjaan("REVISI PROYEK");
             daftarPekerjaan.setLocationRelativeTo(null);
             daftarPekerjaan.setVisible(true); 
         }else{
-            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Menu Ini!");
+            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Halaman Ini!");
         }
     }//GEN-LAST:event_revisionActionPerformed
 
     private void approvalBudgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approvalBudgetActionPerformed
         // TODO add your handling code here:
         if(role.equals("Budget")){
-            DaftarPekerjaan daftarPekerjaan = new DaftarPekerjaan("Approval Budget");
+            DaftarPekerjaan daftarPekerjaan = new DaftarPekerjaan("PERSETUJUAN ANGGARAN");
             daftarPekerjaan.setLocationRelativeTo(null);
             daftarPekerjaan.setVisible(true); 
         }else{
-            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Menu Ini!");
+            JOptionPane.showMessageDialog(null, "Anda Tidak Memiliki Akses Untuk Halaman Ini!");
         }
     }//GEN-LAST:event_approvalBudgetActionPerformed
 

@@ -60,13 +60,13 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new Font("Segoe UI", Font.BOLD, 20)); // NOI18N
-        jLabel1.setText("LOGIN");
+        jLabel1.setText("SIPENALEK");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Username");
+        jLabel2.setText("Nama Pengguna");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("Password");
+        jLabel3.setText("Kata Sandi");
 
         unameInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,28 +94,23 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1Layout.setHorizontalGroup(
-        	jPanel1Layout.createParallelGroup(Alignment.TRAILING)
+        	jPanel1Layout.createParallelGroup(Alignment.LEADING)
         		.addGroup(jPanel1Layout.createSequentialGroup()
-        			.addGap(57)
+        			.addGap(42)
         			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
-        				.addGroup(jPanel1Layout.createSequentialGroup()
-        					.addGroup(jPanel1Layout.createParallelGroup(Alignment.TRAILING)
-        						.addComponent(jLabel3)
-        						.addComponent(jLabel2))
-        					.addGap(18, 21, Short.MAX_VALUE)
-        					.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING, false)
-        						.addComponent(unameInput, GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-        						.addComponent(passInput)))
-        				.addGroup(jPanel1Layout.createSequentialGroup()
-        					.addGap(3)
-        					.addComponent(cancelButton, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
-        					.addPreferredGap(ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-        					.addComponent(loginButton, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)))
+        				.addComponent(cancelButton, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel2)
+        				.addComponent(jLabel3))
+        			.addGap(18)
+        			.addGroup(jPanel1Layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(unameInput, GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+        				.addComponent(passInput, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+        				.addComponent(loginButton, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
         			.addGap(77))
         		.addGroup(jPanel1Layout.createSequentialGroup()
-        			.addContainerGap(156, Short.MAX_VALUE)
-        			.addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
-        			.addGap(129))
+        			.addGap(144)
+        			.addComponent(jLabel1)
+        			.addContainerGap(170, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
         	jPanel1Layout.createParallelGroup(Alignment.LEADING)
@@ -128,8 +123,8 @@ public class Login extends javax.swing.JFrame {
         				.addComponent(unameInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
         			.addGap(18)
         			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
-        				.addComponent(jLabel3)
-        				.addComponent(passInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(passInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jLabel3))
         			.addGap(18)
         			.addGroup(jPanel1Layout.createParallelGroup(Alignment.BASELINE)
         				.addComponent(loginButton, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
@@ -174,7 +169,7 @@ public class Login extends javax.swing.JFrame {
                     UserSession.role = rs.getString("role");
                     UserSession.pos = rs.getString("pos");
                     
-                    JOptionPane.showMessageDialog(null, "Login Successful");
+                    JOptionPane.showMessageDialog(null, "Anda Berhasil Masuk!");
                     this.setVisible(false); //you can't see me!
                     this.dispose(); //Destroy the JFrame object
                     MainMenu mainMenu = new MainMenu();
