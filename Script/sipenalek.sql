@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: sipenalek
+-- Host: 127.0.0.1    Database: sipenalek
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.16-MariaDB
+-- Server version	5.5.5-10.4.27-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -35,7 +35,7 @@ CREATE TABLE `ms_employee` (
   KEY `ms_role_id` (`ms_role_id`),
   CONSTRAINT `ms_employee_ibfk_1` FOREIGN KEY (`ms_pos_id`) REFERENCES `ms_pos` (`id`),
   CONSTRAINT `ms_employee_ibfk_2` FOREIGN KEY (`ms_role_id`) REFERENCES `ms_role` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `ms_employee` (
 
 LOCK TABLES `ms_employee` WRITE;
 /*!40000 ALTER TABLE `ms_employee` DISABLE KEYS */;
-INSERT INTO `ms_employee` VALUES (1,'1111','SiPenalek','Genderless',1,1,1),(2,'2222','Rustaman','Pria',2,2,1),(3,'3333','Budi','Pria',3,3,1),(4,'4444','Siswanto','Pria',4,4,1),(5,'5555','Siska','Wanita',5,5,1),(6,'6666','Siskb','Wanita',5,5,1),(7,'7777','Siskc','Wanita',5,5,1),(8,'8888','Siskd','Waria',5,5,1);
+INSERT INTO `ms_employee` VALUES (1,'0000000000000000','SiPenalek','Genderless',1,1,1),(2,'1234567890123456','Rustaman','Pria',2,2,1),(3,'9876543210987654','Budi','Pria',3,3,1),(4,'1111111111111111','Siswanto','Pria',4,4,1),(5,'2222222222222222','Siska','Wanita',5,5,1),(6,'3333333333333333','Juwita','Wanita',5,5,1),(7,'4444444444444444','Hani','Wanita',5,5,1),(8,'5555555555555555','Rahma','Waria',5,5,1);
 /*!40000 ALTER TABLE `ms_employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `ms_pos` (
   `name` varchar(50) NOT NULL,
   `is_active` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `ms_role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `ms_user` (
   PRIMARY KEY (`id`),
   KEY `ms_employee_id` (`ms_employee_id`),
   CONSTRAINT `ms_user_ibfk_1` FOREIGN KEY (`ms_employee_id`) REFERENCES `ms_employee` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +143,7 @@ CREATE TABLE `prj_project_comment` (
   PRIMARY KEY (`id`),
   KEY `project_id` (`project_id`),
   CONSTRAINT `prj_project_comment_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `prj_project_main` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +152,7 @@ CREATE TABLE `prj_project_comment` (
 
 LOCK TABLES `prj_project_comment` WRITE;
 /*!40000 ALTER TABLE `prj_project_comment` DISABLE KEYS */;
-INSERT INTO `prj_project_comment` VALUES (1,1,'Rustaman','Comment 1','Ajukan','2022-08-25'),(2,1,'Budi','','Revisi','2022-08-25');
+INSERT INTO `prj_project_comment` VALUES (12,6,'Rustaman','Harap Disetujui','Ajukan','2023-06-18'),(13,7,'Rustaman','Harap Disetujui','Ajukan','2023-06-18'),(14,8,'Rustaman','Harap Disetujui','Ajukan','2023-06-18'),(15,9,'Rustaman','Harap Disetujui','Ajukan','2023-06-18'),(16,10,'Rustaman','Harap Disetujui','Ajukan','2023-06-18'),(17,6,'Budi','Saya Setuju','Approved','2023-06-18'),(18,7,'Budi','Harap Direvisi','Revisi','2023-06-18'),(19,8,'Budi','Lanjut','Approved','2023-06-18'),(20,8,'Siswanto','Lakukan Secepatnya','Approved','2023-06-18');
 /*!40000 ALTER TABLE `prj_project_comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,7 +180,7 @@ CREATE TABLE `prj_project_main` (
   KEY `spe_id` (`spe_id`),
   CONSTRAINT `prj_project_main_ibfk_1` FOREIGN KEY (`pm_id`) REFERENCES `ms_employee` (`id`),
   CONSTRAINT `prj_project_main_ibfk_2` FOREIGN KEY (`spe_id`) REFERENCES `ms_employee` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +189,7 @@ CREATE TABLE `prj_project_main` (
 
 LOCK TABLES `prj_project_main` WRITE;
 /*!40000 ALTER TABLE `prj_project_main` DISABLE KEYS */;
-INSERT INTO `prj_project_main` VALUES (1,'Project 1','Test Project 1','10,000,000',2,'Rustaman',6,'Siskb','25 Agustus 2022','Test','Revisi');
+INSERT INTO `prj_project_main` VALUES (6,'2023/ATK/Payung','Pengadaan Payung ATK 2023','200,000,000',2,'Rustaman',6,'Juwita','14 Mei 2023','Pengadaan ATK dengan Kontrak Payung','Approval Project'),(7,'2023/IT/Tender','Pengadaan Laptop 2023','230,000,000',2,'Rustaman',8,'Rahma','25 Desember 2022','Pengadaan Laptop Divisi IT','Revisi'),(8,'2023/Renovasi/Direct','Renovasi Gedung Pulo Gadung','456,000,000',2,'Rustaman',7,'Hani','10 Oktober 2023','Renovasi Gedung Pulo Gadung','Aktif'),(9,'2023/ODOO/Direct','Pembelian Aplikasi ODOO','300,000,000',2,'Rustaman',6,'Juwita','02 MARET 2023','Kontrak Odoo Div. Procurement','Approval Budget'),(10,'2023/SAP/Payung','Kontrak Payung SAP','1,200,000,000',2,'Rustaman',6,'Juwita','03 Januari 2023','Kontrak Payung SAP Div. Procurement','Approval Budget');
 /*!40000 ALTER TABLE `prj_project_main` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,4 +206,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-25 22:21:35
+-- Dump completed on 2023-06-18  3:20:33
